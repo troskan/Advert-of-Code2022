@@ -11,6 +11,21 @@ namespace AoC_1
     {
         static void Main(string[] args)
         {
+            //AoC_01();
+
+
+
+        }
+      
+        
+        
+        
+        
+        
+        
+        
+        static void AoC_01()
+        {
             //Key variables.
             string path = @"C:\Users\Alvin\Desktop\elfStats.txt";
 
@@ -50,9 +65,6 @@ namespace AoC_1
 
                 Console.WriteLine(topCalories + " - Counter: " + counter);
             }
-
-
-
         }
     }
 }
