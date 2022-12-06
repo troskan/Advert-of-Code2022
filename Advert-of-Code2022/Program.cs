@@ -11,60 +11,142 @@ namespace AoC_1
     {
         static void Main(string[] args)
         {
-            //AoC_01();
-
-
-
-        }
-      
-        
-        
-        
-        
-        
-        
-        
-        static void AoC_01()
-        {
-            //Key variables.
-            string path = @"C:\Users\Alvin\Desktop\elfStats.txt";
+            string path = @"C:\Users\Alvin\Desktop\rcp.txt";
 
             StreamReader sr = new StreamReader(path);
+            int counter = 0;
+            string ln;
 
-            List<int> elfsCalories = new List<int>();
+            int totalScore = 0;
 
-            int elfCalorie = 0;
+            List<string> rpcList = new List<string>();
 
             for (int i = 0; i < 2500; i++)
             {
                 string input = sr.ReadLine();
-
-                if (input != "")
+                rpcList.Add(input);
+                if (input[0] == 'A' && input[2] == 'Y')
                 {
-                    elfCalorie += Convert.ToInt32(input);
+                    totalScore += 8;
                 }
-                if (input == "")
+                else if (input[0] == 'B' && input[2] == 'X')
                 {
-                    elfsCalories.Add(Convert.ToInt32(elfCalorie));
-                    elfCalorie = 0;
+                    totalScore += 1;
+                }
+                else if (input[0] == 'C' && input[2] == 'Z')
+                {
+                    totalScore += 6;
                 }
             }
-            sr.Close();
-            Console.WriteLine(elfsCalories.Max());
+            Console.WriteLine($"Totalscore is = {totalScore}");
 
-            int topCalories = 0;
-            int counter = 0;
+            //1 rock, 2 paper, 3 scissor
+            string A = "Rock";
+            string B = "Paper";
+            string C = "Scissor";
 
-            for (int i = 0; i < 3; i++)
+            
+            foreach (var item in rpcList)
             {
-                counter++;
-                var index = elfsCalories.IndexOf(elfsCalories.Max());
+                if (true)
+                {
 
-                topCalories += elfsCalories[index];
-                elfsCalories.RemoveAt(index);
-
-                Console.WriteLine(topCalories + " - Counter: " + counter);
+                }
             }
+
+
+
+
+
+
+
+
+        //    while ((ln = sr.ReadLine()) != null)
+        //    {
+        //        Console.WriteLine(ln);
+        //        counter++;
+        //    }
+        //    sr.Close();
+        //    Console.WriteLine($"File has {counter} lines.");
+            
+        //    int sum = 2500 / 3;
+        //    int result = sum * 15;
+        //    Console.WriteLine();
         }
+        
+        //List<string> elfsCalories = new List<string>();
+
+        //int elfCalorie = 0;
+
+        //for (int i = 0; i < 5000; i++)
+        //{
+        //    string input = sr.ReadLine();
+        //    if (input != "")
+        //    {
+        //        elfsCalories.Add(input);
+        //    }
+        //}
+        //elfsCalories.
+        //sr.Close();
+        //    Console.WriteLine(elfsCalories.Max());
+
+        //    int counter = 0;
+
+        //    foreach (var item in elfsCalories)
+        //    {
+        //        Console.WriteLine(item);
+        //        counter++;
+            //}
+
+            //Console.WriteLine(counter);
+
+
+
+
+
+
+            static void AoC_01()
+            {
+                //Key variables.
+                string path = @"C:\Users\Alvin\Desktop\elfStats.txt";
+
+                StreamReader sr = new StreamReader(path);
+
+                List<int> elfsCalories = new List<int>();
+
+                int elfCalorie = 0;
+
+                for (int i = 0; i < 2500; i++)
+                {
+                    string input = sr.ReadLine();
+
+                    if (input != "")
+                    {
+                        elfCalorie += Convert.ToInt32(input);
+                    }
+                    if (input == "")
+                    {
+                        elfsCalories.Add(Convert.ToInt32(elfCalorie));
+                        elfCalorie = 0;
+                    }
+                }
+                sr.Close();
+                Console.WriteLine(elfsCalories.Max());
+
+                int topCalories = 0;
+                int counter = 0;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    counter++;
+                    var index = elfsCalories.IndexOf(elfsCalories.Max());
+
+                    topCalories += elfsCalories[index];
+                    elfsCalories.RemoveAt(index);
+
+                    Console.WriteLine(topCalories + " - Counter: " + counter);
+                }
+            }
+        
     }
 }
